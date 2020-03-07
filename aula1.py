@@ -90,16 +90,73 @@ def testa_par():
 testa_par()
 
 def dez_mult_tres():
-    #imprimen os primeiros 10 numeros nao negativos de 3
+    #imprime os primeiros 10 numeros nao negativos de 3
     cont = 0
     numero = 1
     while cont < 10:
         if numero % 3 == 0:
             print(numero)
             cont = cont + 1
-        numero += 1   # mesma coisa q numero = numero + 1
+        numero += 1   # mesma coisa q (numero = numero + 1)
+
+
+def ordena_tres_numeros(valor1, valor2, valor3):
+    if valor1 > valor2:
+        valor1, valor2 = valor2, valor1
+    if valor2 > valor3:
+        valor2, valor3 = valor3, valor2
+    if valor1 > valor2:
+        valor1, valor2 = valor2, valor1
+    print(valor1, valor2, valor3)
 
 
 
-dez_mult_tres()
+def decompoe_numero(valor):
+    print(valor % 10)
+    # da o resto mas so a unidade
+
+    print((valor // 10) % 10)
+
+    print(valor // 100)
+    # diz o numero das dezenas'
+
+def e_mult_tres(valor):
+    if valor % 3 == 0:
+        print('É múltiplo de 3.')
+    else:
+        print('Não é múltiplo' )
+
+def e_multiplo(valor, divisor):
+    if valor % divisor == 0:
+        print('É múltiplo de', divisor)
+    else: print('Não é múltiplo de ', divisor)
+
+
+def informa_pares():
+    for i in range(3):
+        valor = int(input('Insira o número.\n'))
+        e_multiplo(valor, 2)
+
+def informa_maior():
+    maximo = 0
+    for i in range(3):
+        valor = int(input('Insira um número.\n'))
+        if valor > maximo:
+            maximo = valor
+    print('O maior valor insereido é', maximo)
+
+
+def informa_maior_alt():
+    numeros = []
+    for i in range(3):
+        numeros.append(int(input('Informe um valor.\n')))
+    print(numeros)
+
+def main():
+    informa_maior_alt()
+
+
+if __name__ == '__main__':
+    main()
+
 
